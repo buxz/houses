@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- 配置关闭缓存-->
+        <!-- Globally enables or disables any caches configured in any mapper under this configuration -->
+        <setting name="cacheEnabled" value="false"/>
+
+        <!-- 事务的超时时间-->
+        <!-- Sets the number of seconds the driver will wait for a response from the database -->
+        <setting name="defaultStatementTimeout" value="600"/>
+
+        <!-- 驼峰命名-->
+        <!-- Enables automatic mapping from classic database column names A_COLUMN to camel case classic Java property names aColumn -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- Allows JDBC support for generated keys. A compatible driver is required.
+        This setting forces generated keys to be used if set to true,
+         as some drivers deny compatibility but still work -->
+        <setting name="useGeneratedKeys" value="true"/>
+
+        <!-- 缓存 prepareStament 提高性能-->
+        <setting name="defaultExecutorType" value="REUSE"/>
+    </settings>
+
+    <!-- Continue going here -->
+    <!-- 配置别名-->
+    <typeAliases>
+        <typeAlias type="com.buxz.imooc.houses.common.model.User" alias="user"/>
+    </typeAliases>
+
+    <!-- 配置xml文件路径-->
+    <mappers>
+        <mapper resource="mapper/user.xml"/>
+    </mappers>
+
+
+
+</configuration>
